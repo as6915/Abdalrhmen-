@@ -1,0 +1,84 @@
+/* Main Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+.main-header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2980b9, #6dd5fa);
+    position: relative;
+}
+.hero-text {
+    text-align: center;
+    z-index: 10;
+}
+.hero-text h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+.hero-text p {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 20px;
+}
+.cta {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 25px;
+    background: #fff;
+    color: #2980b9;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.cta:hover {
+    background: #2980b9;
+    color: #fff;
+}
+.about-section {
+    padding: 100px 50px;
+    background: #fff;
+    text-align: center;
+}
+.parallax {
+    background-image: url('path/to/background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.service-card {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 30%;
+    transition: 0.3s;
+}
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.footer-content {
+    text-align: center;
+    padding: 50px 0;
+    background: #2980b9;
+    color: #fff;
+}
