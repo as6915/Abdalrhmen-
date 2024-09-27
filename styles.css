@@ -1,323 +1,130 @@
-/* إعدادات أساسية */
+/* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* الجسم */
 body {
-    font-family: 'Cairo', sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #83a4d4, #b6fbff);
     color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
 }
 
-/* إعدادات الهيدر */
+/* الهيدر */
 header {
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    background-color: rgba(0, 51, 102, 0.8);
+    color: white;
     padding: 20px;
     text-align: center;
-    color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-header .logo img {
-    width: 50px;
-    vertical-align: middle;
-}
-
-header .logo h1 {
-    display: inline-block;
-    margin-left: 10px;
-    font-size: 2.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
+/* التنقل */
 nav ul {
     list-style: none;
-    margin-top: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    font-weight: 500;
-    position: relative;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background-color: #ffdd59;
-    bottom: -5px;
-    left: 0;
-    transition: width 0.3s ease;
+nav a:hover {
+    color: #b6fbff;
 }
 
-nav ul li a:hover::before {
-    width: 100%;
-}
-
-nav ul li a:hover {
-    color: #ffdd59;
-}
-
-/* تصميم قسم البطل (Hero Section) */
+/* قسم البطل */
 .hero {
-    background: url('science-background.jpg') no-repeat center center/cover;
-    height: 100vh;
+    position: relative;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     color: white;
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
+    overflow: hidden;
 }
 
-.hero .overlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-}
-
-.hero h2 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    animation: slideDown 1s ease-in-out;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    animation: slideUp 1s ease-in-out;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .cta-btn {
-    padding: 15px 30px;
-    background-color: #ffdd59;
-    color: #333;
+    background-color: #ff4081;
+    padding: 10px 20px;
+    color: white;
     text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .cta-btn:hover {
-    background-color: #f39c12;
-    transform: translateY(-5px);
+    background-color: #ff1a5c;
 }
 
-/* تصميم قسم الدروس */
-.lessons {
-    padding: 100px 50px;
-    background-color: #fff;
-    text-align: center;
+/* الأشكال العائمة */
+.floating-shapes {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.lessons h2 {
-    font-size: 3rem;
-    margin-bottom: 50px;
-    color: #4e54c8;
-    text-transform: uppercase;
-    animation: fadeIn 1.5s ease-in-out;
+.shape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    animation: float 6s ease-in-out infinite;
 }
 
-.lesson-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.circle {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
 }
 
-.lesson {
-    background: linear-gradient(135deg, #89fffd, #ef32d9);
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: zoomIn 1s ease-in-out;
+.square {
+    width: 80px;
+    height: 80px;
+    top: 30%;
+    right: 15%;
+    animation-delay: 2s;
 }
 
-.lesson:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 70px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    animation-delay: 4s;
 }
 
-.lesson h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.lesson p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-.lesson a {
-    padding: 10px 20px;
-    background-color: #4e54c8;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.lesson a:hover {
-    background-color: #8f94fb;
-    transform: translateY(-5px);
-}
-
-/* تصميم المعمل الافتراضي */
-.virtual-lab {
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    color: white;
-    padding: 100px 50px;
-    text-align: center;
-}
-
-.virtual-lab h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.virtual-lab p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-    animation: slideUp 1s ease-in-out;
-}
-
-.virtual-lab a {
-    padding: 15px 30px;
-    background-color: #ffdd59;
-    color: #333;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.virtual-lab a:hover {
-    background-color: #f39c12;
-    transform: translateY(-5px);
-}
-
-/* تصميم منتدى النقاش */
-.forum {
-    background-color: #f7f7f7;
-    padding: 100px 50px;
-    text-align: center;
-}
-
-.forum h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    color: #4e54c8;
-}
-
-.forum p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-}
-
-.forum a {
-    padding: 15px 30px;
-    background-color: #4e54c8;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.forum a:hover {
-    background-color: #8f94fb;
-    transform: translateY(-5px);
-}
-
-/* تصميم قسم اتصل بنا */
-.contact {
-    background-color: #333;
-    color: white;
-    padding: 100px 50px;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-.contact p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-}
-
-.contact a {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 30px;
-    background-color: #4e54c8;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.contact a:hover {
-    background-color: #8f94fb;
-    transform: translateY(-5px);
-}
-
-/* تصميم الفوتر */
-footer {
-    background-color: #4e54c8;
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
-
-footer p {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-/* الرسوم المتحركة */
+/* التحريك */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -327,35 +134,49 @@ footer p {
     }
 }
 
-@keyframes slideUp {
-    from {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    to {
+@keyframes float {
+    0%, 100% {
         transform: translateY(0);
-        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px);
     }
 }
 
-@keyframes slideDown {
-    from {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* قسم الدروس */
+.lessons {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
 }
 
-@keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.lesson {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.lesson:hover {
+    transform: translateY(-10px);
+}
+
+/* الأقسام الأخرى */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* الفوتر */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 51, 102, 0.8);
+    color: white;
 }
