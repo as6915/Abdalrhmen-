@@ -3,104 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="عبد الرحمن رضا - مدرس محترف">
-    <title>عبد الرحمن رضا | المدرس المتميز</title>
+    <title>موقع Mr. Abdelrahman Reda - مدرس العلوم</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://threejs.org/examples/jsm/loaders/GLTFLoader.js"></script>
 </head>
 <body>
-
-    <!-- الهيدر بواجهة جذابة وتأثيرات 3D -->
-    <header class="main-header">
-        <div class="hero-text">
-            <h1>عبد الرحمن رضا</h1>
-            <p>مدرس بيستخدم التكنولوجيا في التعليم</p>
-            <a href="#about" class="cta">اعرف عني أكتر</a>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="شعار Mr. Abdelrahman Reda">
+            <h1>موقع Mr. Abdelrahman Reda</h1>
         </div>
-        <!-- تأثير 3D -->
-        <div id="three-container"></div>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#lessons">الدروس</a></li>
+                <li><a href="#lab">المعمل الافتراضي</a></li>
+                <li><a href="#forum">منتدى النقاش</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- قسم نبذة بتأثيرات بارالاكس -->
-    <section id="about" class="about-section parallax">
-        <div class="content">
-            <h2>أنا مين</h2>
-            <p>
-                أنا عبد الرحمن رضا، مدرس عندي شغف باستخدام التكنولوجيا في التعليم. عندي خبرة سنين في التدريس سواء في الفصول الدراسية أو الافتراضية. هدفي إني أخلي التعليم أكتر تفاعل وإبداع للطلاب في كل مكان.
-            </p>
-            <a href="#services" class="cta">اتفرج على خدماتي</a>
+    <section id="home" class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h2>استكشف عالم العلوم مع Mr. Abdelrahman Reda</h2>
+            <p>تعلم العلوم بطريقة مبتكرة وممتعة مع أفضل المدرسين.</p>
+            <a href="#lessons" class="cta-btn">ابدأ التعلم الآن</a>
         </div>
     </section>
 
-    <!-- قسم الخدمات بتأثيرات التفاعل عند التمرير -->
-    <section id="services" class="services-section">
-        <h2>خدماتي</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <h3>طرق تعليم جديدة</h3>
-                <p>استخدام التكنولوجيا الحديثة عشان نخلي التعليم أكتر تفاعل وابتكار.</p>
+    <section id="lessons" class="lessons">
+        <h2>الدروس المتاحة</h2>
+        <div class="lesson-grid">
+            <div class="lesson">
+                <h3>الفيزياء</h3>
+                <p>تعرف على قوانين الفيزياء بطريقة تفاعلية.</p>
+                <a href="#">ابدأ الآن</a>
             </div>
-            <div class="service-card">
-                <h3>تصميم مناهج خاصة</h3>
-                <p>تطوير مناهج بتناسب كل طالب حسب طريقة تعلمه.</p>
+            <div class="lesson">
+                <h3>الكيمياء</h3>
+                <p>استكشاف المواد الكيميائية وتجارب مثيرة.</p>
+                <a href="#">ابدأ الآن</a>
             </div>
-            <div class="service-card">
-                <h3>إدارة فصول أونلاين</h3>
-                <p>خبرة في إعداد وإدارة الفصول الافتراضية للتعلم عن بُعد بكل سهولة.</p>
+            <div class="lesson">
+                <h3>الأحياء</h3>
+                <p>اكتشاف أسرار الحياة والكائنات الحية.</p>
+                <a href="#">ابدأ الآن</a>
             </div>
         </div>
     </section>
 
-    <!-- الفوتر -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <h2>تواصل معايا</h2>
-            <p>لو عايز تستشيرني أو محتاج مساعدة في تصميم منهج أو عايز تناقش التعليم معايا.</p>
-            <a href="mailto:bedo21391@gmail.com" class="cta">ابعتلي</a>
-        </div>
-        <p>© 2024 عبد الرحمن رضا - تطوير التعليم</p>
+    <section id="lab" class="virtual-lab">
+        <h2>المعمل الافتراضي</h2>
+        <p>قم بإجراء تجارب علمية افتراضية واكتشف أسرار العلم بنفسك!</p>
+        <a href="#">ادخل المعمل الآن</a>
+    </section>
+
+    <section id="forum" class="forum">
+        <h2>منتدى النقاش</h2>
+        <p>شارك الأسئلة والنقاشات العلمية مع Mr. Abdelrahman Reda وزملائك في المنتدى.</p>
+        <a href="#">اذهب للمنتدى</a>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>اتصل بنا</h2>
+        <p>لديك أسئلة؟ تواصل مع Mr. Abdelrahman Reda عبر الواتساب أو البريد الإلكتروني.</p>
+        <a href="mailto:bedo21391@gmail.com">أرسل لنا بريدًا</a>
+        <a href="https://wa.me/201028085788">تواصل عبر واتساب</a>
+    </section>
+
+    <footer>
+        <p>© 2024 Mr. Abdelrahman Reda. جميع الحقوق محفوظة.</p>
     </footer>
-
-    <!-- GSAP و Three.js مع تأثيرات البارالاكس -->
-    <script>
-        // تأثيرات GSAP لظهور النصوص بشكل سلس
-        gsap.from('.hero-text h1', { opacity: 0, y: 50, duration: 1 });
-        gsap.from('.hero-text p', { opacity: 0, y: 50, delay: 0.5, duration: 1 });
-        gsap.from('.hero-text .cta', { opacity: 0, y: 50, delay: 1, duration: 1 });
-
-        // تأثير البارالاكس لقسم "أنا مين"
-        window.addEventListener('scroll', function() {
-            let scrollPosition = window.pageYOffset;
-            document.querySelector('.parallax').style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-        });
-
-        // Three.js لتأثير 3D في الهيدر
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('three-container').appendChild(renderer.domElement);
-
-        const loader = new THREE.GLTFLoader();
-        loader.load('https://example.com/path/to/3d_model.glb', function(gltf) {
-            const object = gltf.scene;
-            scene.add(object);
-            object.scale.set(0.5, 0.5, 0.5);
-            camera.position.z = 5;
-
-            function animate() {
-                requestAnimationFrame(animate);
-                object.rotation.y += 0.01;
-                renderer.render(scene, camera);
-            }
-            animate();
-        }, undefined, function(error) {
-            console.error(error);
-        });
-    </script>
-
 </body>
 </html>
