@@ -1,83 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abdelrahman Reda - Professional Educator">
-    <title>Abdelrahman Reda | Educator Extraordinaire</title>
+    <meta name="description" content="عبد الرحمن رضا - مدرس محترف">
+    <title>عبد الرحمن رضا | المدرس المتميز</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://threejs.org/examples/jsm/loaders/GLTFLoader.js"></script>
 </head>
 <body>
 
-    <!-- Fullscreen hero section with 3D effects -->
+    <!-- الهيدر بواجهة جذابة وتأثيرات 3D -->
     <header class="main-header">
         <div class="hero-text">
-            <h1>Abdelrahman Reda</h1>
-            <p>Revolutionizing Education Through Technology</p>
-            <a href="#about" class="cta">Learn More</a>
+            <h1>عبد الرحمن رضا</h1>
+            <p>مدرس بيستخدم التكنولوجيا في التعليم</p>
+            <a href="#about" class="cta">اعرف عني أكتر</a>
         </div>
-        <!-- Placeholder for 3D effect -->
+        <!-- تأثير 3D -->
         <div id="three-container"></div>
     </header>
 
-    <!-- Parallax section for a dynamic experience -->
+    <!-- قسم نبذة بتأثيرات بارالاكس -->
     <section id="about" class="about-section parallax">
         <div class="content">
-            <h2>About Me</h2>
+            <h2>أنا مين</h2>
             <p>
-                I’m Abdelrahman Reda, an educator passionate about integrating technology into teaching. With years of experience in both classrooms and virtual spaces, I strive to make learning more engaging, interactive, and innovative for students around the world.
+                أنا عبد الرحمن رضا، مدرس عندي شغف باستخدام التكنولوجيا في التعليم. عندي خبرة سنين في التدريس سواء في الفصول الدراسية أو الافتراضية. هدفي إني أخلي التعليم أكتر تفاعل وإبداع للطلاب في كل مكان.
             </p>
-            <a href="#services" class="cta">Explore My Services</a>
+            <a href="#services" class="cta">اتفرج على خدماتي</a>
         </div>
     </section>
 
-    <!-- Advanced Services Section with interactive hover effects -->
+    <!-- قسم الخدمات بتأثيرات التفاعل عند التمرير -->
     <section id="services" class="services-section">
-        <h2>My Services</h2>
+        <h2>خدماتي</h2>
         <div class="service-cards">
             <div class="service-card">
-                <h3>Innovative Teaching Methods</h3>
-                <p>Using cutting-edge technology to make learning more engaging.</p>
+                <h3>طرق تعليم جديدة</h3>
+                <p>استخدام التكنولوجيا الحديثة عشان نخلي التعليم أكتر تفاعل وابتكار.</p>
             </div>
             <div class="service-card">
-                <h3>Custom Curriculum Design</h3>
-                <p>Tailored curriculums to fit each student's unique learning style.</p>
+                <h3>تصميم مناهج خاصة</h3>
+                <p>تطوير مناهج بتناسب كل طالب حسب طريقة تعلمه.</p>
             </div>
             <div class="service-card">
-                <h3>Virtual Classroom Mastery</h3>
-                <p>Expertise in setting up and managing virtual classes for efficient learning.</p>
+                <h3>إدارة فصول أونلاين</h3>
+                <p>خبرة في إعداد وإدارة الفصول الافتراضية للتعلم عن بُعد بكل سهولة.</p>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Footer -->
+    <!-- الفوتر -->
     <footer class="main-footer">
         <div class="footer-content">
-            <h2>Get in Touch</h2>
-            <p>Connect with me for consultations, curriculum design, or speaking engagements.</p>
-            <a href="mailto:bedo21391@gmail.com" class="cta">Contact Me</a>
+            <h2>تواصل معايا</h2>
+            <p>لو عايز تستشيرني أو محتاج مساعدة في تصميم منهج أو عايز تناقش التعليم معايا.</p>
+            <a href="mailto:bedo21391@gmail.com" class="cta">ابعتلي</a>
         </div>
-        <p>© 2024 Abdelrahman Reda - Innovating Education</p>
+        <p>© 2024 عبد الرحمن رضا - تطوير التعليم</p>
     </footer>
 
-    <!-- GSAP + Three.js + Interactive Scrolling Parallax -->
+    <!-- GSAP و Three.js مع تأثيرات البارالاكس -->
     <script>
-        // GSAP Animations for smooth intro
+        // تأثيرات GSAP لظهور النصوص بشكل سلس
         gsap.from('.hero-text h1', { opacity: 0, y: 50, duration: 1 });
         gsap.from('.hero-text p', { opacity: 0, y: 50, delay: 0.5, duration: 1 });
         gsap.from('.hero-text .cta', { opacity: 0, y: 50, delay: 1, duration: 1 });
 
-        // Parallax Effect for about section
+        // تأثير البارالاكس لقسم "أنا مين"
         window.addEventListener('scroll', function() {
             let scrollPosition = window.pageYOffset;
             document.querySelector('.parallax').style.backgroundPositionY = scrollPosition * 0.5 + 'px';
         });
 
-        // Three.js 3D Object in Hero Section
+        // Three.js لتأثير 3D في الهيدر
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
@@ -85,7 +85,7 @@
         document.getElementById('three-container').appendChild(renderer.domElement);
 
         const loader = new THREE.GLTFLoader();
-        loader.load('https://youtube.com/@elakrab?feature=shared/path/to/3d_model.glb', function(gltf) {
+        loader.load('https://example.com/path/to/3d_model.glb', function(gltf) {
             const object = gltf.scene;
             scene.add(object);
             object.scale.set(0.5, 0.5, 0.5);
@@ -104,4 +104,3 @@
 
 </body>
 </html>
-
