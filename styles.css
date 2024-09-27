@@ -1,182 +1,137 @@
-/* Reset styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* الجسم */
+/* General styles */
 body {
+    margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #83a4d4, #b6fbff);
-    color: #333;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* الهيدر */
-header {
-    background-color: rgba(0, 51, 102, 0.8);
+/* Header styles */
+.main-header {
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
 
-/* التنقل */
-nav ul {
+.logo h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: 'Cairo', sans-serif;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
-    justify-content: center;
+    gap: 1.5rem;
 }
 
-nav ul li {
-    margin: 0 15px;
+.nav-links li {
+    margin: 0;
 }
 
-nav a {
+.nav-links a {
     color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cta {
+    background-color: #fca311;
+    color: black;
+    padding: 0.8rem 1.5rem;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #b6fbff;
-}
-
-/* قسم البطل */
-.hero {
-    position: relative;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.cta-btn {
-    background-color: #ff4081;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
 }
 
-.cta-btn:hover {
-    background-color: #ff1a5c;
+.cta:hover {
+    background-color: #e89b0c;
 }
 
-/* الأشكال العائمة */
-.floating-shapes {
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.shape {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.5);
-    animation: float 6s ease-in-out infinite;
-}
-
-.circle {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.square {
-    width: 80px;
-    height: 80px;
-    top: 30%;
-    right: 15%;
-    animation-delay: 2s;
-}
-
-.triangle {
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-bottom: 70px solid rgba(255, 255, 255, 0.5);
-    position: absolute;
-    top: 50%;
-    left: 40%;
-    animation-delay: 4s;
-}
-
-/* التحريك */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-/* قسم الدروس */
-.lessons {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.lesson-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.lesson {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('your-image-url.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
     text-align: center;
-    transition: transform 0.3s;
+    position: relative;
+    z-index: 10;
 }
 
-.lesson:hover {
+.hero h2 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+/* Services section */
+.services {
+    padding: 5rem 2rem;
+    background-color: #111;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fca311;
+}
+
+.service-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #222;
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
     transform: translateY(-10px);
 }
 
-/* الأقسام الأخرى */
-section {
-    padding: 20px;
+/* Footer */
+.main-footer {
+    background-color: #333;
+    color: white;
     text-align: center;
+    padding: 1rem;
 }
 
-/* الفوتر */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 51, 102, 0.8);
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0 0;
+}
+
+.social-links a {
     color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
 }
