@@ -3,72 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mr. Abdelrahman Reda | مدرس العلوم</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="موقع تسجيل بيانات الطلاب بتصميم خرافي ثلاثي الأبعاد">
+    <title>تسجيل بيانات الطلاب - عبدالرحمن رضا</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <h1>Mr. Abdelrahman Reda</h1>
+    <!-- قسم تسجيل دخول الأدمن -->
+    <div class="container" id="login-container">
+        <div class="login-box">
+            <h1>تسجيل دخول الأدمن</h1>
+            <input type="text" id="admin-username" placeholder="اسم المستخدم" required><br>
+            <input type="password" id="admin-password" placeholder="كلمة المرور" required><br>
+            <button type="button" onclick="adminLogin()">تسجيل الدخول</button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#">الدروس</a></li>
-                <li><a href="#">المعمل الافتراضي</a></li>
-                <li><a href="#">المنتدى</a></li>
-                <li><a href="#">اتصل بنا</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div>
 
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h2>مرحباً بك في عالم العلوم</h2>
-            <p>اكتشف عالم العلوم بطرق ممتعة وسهلة مع الأستاذ Mr. Abdelrahman Reda</p>
-            <button id="colorToggle" class="cta-btn">تغيير الألوان</button>
+    <!-- قسم تسجيل الطلاب -->
+    <div class="container" id="student-form-container">
+        <div class="form-box">
+            <h1>تسجيل بيانات الطلاب</h1>
+            <form id="student-form">
+                <input type="text" id="student-name" placeholder="الاسم الثلاثي" required><br>
+                <input type="number" id="student-number" placeholder="رقم الطالب" required><br>
+                <button type="button" onclick="registerStudent()">تسجيل</button>
+            </form>
         </div>
-        <div class="floating-shapes">
-            <div class="shape circle"></div>
-            <div class="shape square"></div>
-            <div class="shape triangle"></div>
+        
+        <!-- قسم أدوات تحكم الأدمن -->
+        <div class="admin-controls">
+            <h2>تحكم الأدمن</h2>
+            <button type="button" onclick="generatePDF()">تحميل البيانات كـ PDF</button>
         </div>
-    </section>
+    </div>
 
-    <section class="lessons">
-        <h2>الدروس</h2>
-        <div class="lesson-grid">
-            <div class="lesson">
-                <h3>الكيمياء</h3>
-                <p>تعرف على العناصر والمركبات بشكل مبسط.</p>
-                <a href="#">تعلم المزيد</a>
-            </div>
-            <div class="lesson">
-                <h3>الفيزياء</h3>
-                <p>اكتشف القوانين التي تحكم الكون.</p>
-                <a href="#">تعلم المزيد</a>
-            </div>
-            <div class="lesson">
-                <h3>الأحياء</h3>
-                <p>استكشف الحياة والمخلوقات من حولنا.</p>
-                <a href="#">تعلم المزيد</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="virtual-lab">
-        <h2>المعمل الافتراضي</h2>
-        <p>تجارب علمية مباشرة عبر الإنترنت تفاعلية وممتعة.</p>
-        <a href="#">ابدأ التجربة الآن</a>
-    </section>
-    
-    <footer>
-        <p>&copy; 2024 Mr. Abdelrahman Reda. جميع الحقوق محفوظة.</p>
-    </footer>
-
+    <!-- ربط ملف JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
