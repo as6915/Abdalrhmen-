@@ -1,22 +1,72 @@
-// script.js
+// مصفوفة لتخزين بيانات الطلاب محلياً
+let students = [];
 
-// تغيير الألوان عند الضغط على الزر
-document.getElementById('colorToggle').addEventListener('click', function() {
-    document.body.classList.toggle('gold-theme');
-});
+// بيانات الأدمن الافتراضية (يمكن تعديلها لاحقًا)
+const adminCredentials = {
+    username: 'admin',
+    password: 'admin123'
+};
 
-// التحريك عند التمرير
-window.addEventListener('scroll', function() {
-    const lessonsSection = document.querySelector('.lessons');
-    const scrollPosition = window.scrollY;
+// إظهار صفحة تسجيل الدخول عند تحميل الصفحة
+document.getElementById('login-container').classList.add('visible');
 
-    if (scrollPosition + window.innerHeight >= lessonsSection.offsetTop) {
-        lessonsSection.classList.add('fade-in');
+// وظيفة تسجيل الدخول للأدمن
+function adminLogin() {
+    const username = document.getElementById('admin-username').value;
+    const password = document.getElementById('admin-password').value;
+
+    if (username === adminCredentials.username && password === adminCredentials.password) {
+        alert('تم تسجيل الدخول بنجاح!');
+
+        // عرض واجهة تسجيل الطلاب
+        document.getElementById('login-container').classList.remove('visible');
+        document.getElementById('student-form-container').classList.add('visible');
+    } else {
+        alert('اسم المستخدم أو كلمة المرور غير صحيحة. حاول مرة أخرى.');
     }
-});
+}
 
-// إضافة تأثيرات إضافية عند تحميل الصفحة
-window.addEventListener('load', function() {
-    const heroContent = document.querySelector('.hero-content');
-    heroContent.classList.add('slide-in');
-});
+// وظيفة تسجيل الطلاب
+function registerStudent() {
+    let name = document.getElementById('student-name').value;
+    let number = document.getElementById('student-number').value;
+
+    if (name && number) {
+        students.push({ name, number });
+        students.sort((a, b) => a.name.localeCompare(b.name, 'ar'));
+
+        // إعادة تعيين الحقول بعد التسجيل
+        document.getElementById('student-name').value = '';
+        document.getElementById('student-number').value = '';
+
+        alert(`تم التسجيل بنجاح! عدد الطلاب الحالي: ${students.length}`);
+
+        // توليد ملف PDF تلقائيًا عند الوصول إلى 200 طالب
+        if (students.length >= 200) {
+            alert('تم الوصول إلى 200 طالب، سيتم توليد ملف PDF الآن.');
+            generatePDF();
+        }
+    } else {
+        alert('يرجى إدخال الاسم ورقم الطالب بشكل صحيح.');
+    }
+}
+
+// وظيفة توليد PDF
+function generatePDF() {
+    students.sort((a, b) => a.name.localeCompare(b.name, 'ar'));
+
+    // إعداد محتوى ملف PDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // إعداد النص في ملف PDF
+    doc.setFontSize(12);
+    let yPosition = 10;
+    students.forEach((student, index) => {
+        doc.text(`${index + 1}. ${student.name} - ${student.number}`, 10, yPosition);
+        yPosition += 10; // الانتقال للأسفل لكل طالب
+    });
+
+    // حفظ ملف PDF وتحميله
+    doc.save("students_data.pdf");
+}
